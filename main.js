@@ -10,10 +10,10 @@ menuIcon.addEventListener("click", (e) => {
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
-window.onscroll = (e) => {
+window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 110;
+    let offset = sec.offsetTop - 100;
     let height = sec.offsetHeight;
     let id = sec.getAttribute("id");
 
@@ -24,11 +24,16 @@ window.onscroll = (e) => {
           .querySelector("header nav a[href*=" + id + "]")
           .classList.add("active");
       });
+      sec.classList.add("show-animate");
+    } else {
+      sec.classList.remove("show-animate");
     }
+
     menuIcon.classList.remove("bx-x");
     navbar.classList.remove("active");
-  });
 
+  });
+ 
   let header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 100);
 };
@@ -47,3 +52,5 @@ let hireMe = document.querySelector("#hire-me");
 hireMe.addEventListener("click", (e) => {
   window.location.href = "mailto:email@example.com";
 });
+
+

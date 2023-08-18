@@ -73,6 +73,9 @@
   transform: translateY(6rem);
   scale: 1.2;
 }
+.home-avatar {
+  position: relative;
+}
 
 @keyframes rotate {
   to {
